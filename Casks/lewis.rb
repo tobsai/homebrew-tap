@@ -2,7 +2,7 @@ cask "lewis" do
   version "1.0.0"
   sha256 "5ead7b3a6ddb71389b7703cc02f169996d918cc7e65ec0ee6f6d0223b2c7a685"
 
-  url "https://talos.mtree.io/downloads/Lewis-#{version}.dmg"
+  url "https://github.com/tobsai/agent-portal-desktop/releases/download/v#{version}/Lewis-#{version}.dmg"
   name "Lewis"
   desc "Lewis Agent Portal — Desktop Chat for macOS"
   homepage "https://talos.mtree.io"
