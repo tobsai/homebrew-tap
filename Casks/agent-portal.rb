@@ -1,4 +1,4 @@
-cask "lewis" do
+cask "agent-portal" do
   version "1.0.0"
   sha256 "5ead7b3a6ddb71389b7703cc02f169996d918cc7e65ec0ee6f6d0223b2c7a685"
 

@@ -6,11 +6,11 @@ Custom Homebrew tap for Lewis Desktop and other Maple Tree tools.
 
 ```bash
 brew tap tobsai/tap
-brew install --cask lewis
+brew install --cask agent-portal
 ```
 
 ## Available Casks
 
 | Cask | Description |
 |------|-------------|
-| `lewis` | Lewis Agent Portal — Desktop Chat for macOS |
+| `agent-portal` | Lewis Agent Portal — Desktop Chat for macOS |
