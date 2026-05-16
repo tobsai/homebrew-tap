@@ -1,8 +1,8 @@
 class Fort < Formula
   desc "Self-improving personal AI agent platform"
   homepage "https://github.com/tobsai/fort"
-  url "https://github.com/tobsai/fort/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "0a5e914887b7c0a28a4b0bb7dd9594b9bf31cf4c8df356b8e01a0bbe604f3824"
+  url "https://github.com/tobsai/fort/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "6a6c9ab52aa73b72d74894e9eb526bcb001530c50f8de7963b4e6df61306f604"
   license "MIT"
 
   depends_on "node@20"
@@ -12,17 +12,20 @@ class Fort < Formula
     # so we don't pass --ignore-scripts.
     system "npm", "install", "--no-audit", "--no-fund"
 
-    # Build only what the CLI needs. The dashboard workspace is a Tauri app
-    # that would pull in extra toolchains; users who want it run it from a
-    # checkout.
+    # Build core (LLM client + services), CLI, and the dashboard SPA.
+    # The dashboard's Tauri pieces are optional deps and don't pull in the
+    # Rust toolchain.
     system "npm", "run", "build", "--workspace=@fort-ai/core"
     system "npm", "run", "build", "--workspace=@fort-ai/cli"
+    system "npm", "run", "build", "--workspace=@fort/dashboard"
 
     # Stage runtime artifacts under libexec
     libexec.install "package.json"
     libexec.install "node_modules"
-    (libexec/"packages/core").install "packages/core/dist", "packages/core/package.json"
-    (libexec/"packages/cli").install  "packages/cli/dist",  "packages/cli/package.json"
+    (libexec/"packages/core").install      "packages/core/dist",      "packages/core/package.json"
+    (libexec/"packages/cli").install       "packages/cli/dist",       "packages/cli/package.json"
+    (libexec/"packages/cli").install       "packages/cli/assets"
+    (libexec/"packages/dashboard").install "packages/dashboard/dist", "packages/dashboard/package.json"
 
     # Wrapper pinning the formula's node@20
     (bin/"fort").write <<~SH
