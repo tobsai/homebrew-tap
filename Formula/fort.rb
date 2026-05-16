@@ -1,8 +1,8 @@
 class Fort < Formula
   desc "Self-improving personal AI agent platform"
   homepage "https://github.com/tobsai/fort"
-  url "https://github.com/tobsai/fort/archive/refs/tags/v0.2.10.tar.gz"
-  sha256 "2777c60f24f494516c1d689a8ede519fba1502fb765e846ce7a9ef1adb60acaf"
+  url "https://github.com/tobsai/fort/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "aba701e3df652ebf99bd53a1df256a7872ad693421f8463b3af8aa74470d12eb"
   license "MIT"
 
   depends_on "node@20"
