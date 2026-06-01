@@ -1,14 +1,20 @@
+# Source-of-truth for the Postern Homebrew formula (copied to tobsai/homebrew-tap
+# as Formula/postern.rb at release; see docs/release.md).
+#
+# The source repo (tobsai/postern) is PRIVATE, so we don't build from source in
+# the formula. Instead we publish a prebuilt, self-contained CLI bundle (dist +
+# the Python adapter assets + node_modules) as a PUBLIC release asset on the tap
+# repo, and the formula just downloads + installs it. No token, no build toolchain.
+# The bundle contains no secrets (the Desktop OAuth secret is read from env at
+# runtime). Bump `url`/`sha256`/`version` per release.
 class Postern < Formula
   desc "Register a machine-hosted Hermes agent with Postern (Google-account relay)"
   homepage "https://github.com/tobsai/postern"
-  url "https://github.com/tobsai/homebrew-tap/releases/download/postern-0.1.0/postern-cli-0.1.0.tar.gz"
-  sha256 "e9ba378b4f79bfe47b4f7eff3488a81d5d34156b6589a796425480c87c97afd4"
-  version "0.1.0"
+  url "https://github.com/tobsai/homebrew-tap/releases/download/postern-0.1.1/postern-cli-0.1.1.tar.gz"
+  sha256 "d745e0eb53a55edbcec350bbe0e803bd88e164241984bbc2d31dd37b304c6b04"
+  version "0.1.1"
   license "MIT"
 
-  # Prebuilt, self-contained CLI bundle (dist + the Python adapter assets +
-  # node_modules). The source repo (tobsai/postern) is private; this artifact is
-  # the public install path, so no build-from-source / token is needed.
   depends_on "node"
 
   def install
@@ -31,6 +37,6 @@ class Postern < Formula
   end
 
   test do
-    assert_match "0.1.0", shell_output("#{bin}/postern --version")
+    assert_match "0.1.1", shell_output("#{bin}/postern --version")
   end
 end
