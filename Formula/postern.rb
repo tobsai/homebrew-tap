@@ -10,9 +10,9 @@
 class Postern < Formula
   desc "Register a machine-hosted Hermes agent with Postern (Google-account relay)"
   homepage "https://github.com/tobsai/postern"
-  url "https://github.com/tobsai/homebrew-tap/releases/download/postern-0.1.1/postern-cli-0.1.1.tar.gz"
-  sha256 "d745e0eb53a55edbcec350bbe0e803bd88e164241984bbc2d31dd37b304c6b04"
-  version "0.1.1"
+  url "https://github.com/tobsai/homebrew-tap/releases/download/postern-0.1.2/postern-cli-0.1.2.tar.gz"
+  sha256 "708b63f5245d5220eea8e449f0487dfe79886295bb0f9cd49f1ef140775217a4"
+  version "0.1.2"
   license "MIT"
 
   depends_on "node"
@@ -37,6 +37,6 @@ class Postern < Formula
   end
 
   test do
-    assert_match "0.1.1", shell_output("#{bin}/postern --version")
+    assert_match "0.1.2", shell_output("#{bin}/postern --version")
   end
 end
