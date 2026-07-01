@@ -5,21 +5,21 @@
 class Fort < Formula
   desc "Deterministic agent orchestration — route, run, and gate agent CLIs natively"
   homepage "https://github.com/tobsai/fort"
-  version "0.5.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tobsai/fort/releases/download/v0.5.0/fort_0.5.0_darwin_amd64.tar.gz"
-      sha256 "a91290e85a0dedcb0d9facec83971bcfbc4411bb2295dc16c6ce1b939d90e8ce"
+      url "https://github.com/tobsai/fort/releases/download/v0.5.1/fort_0.5.1_darwin_amd64.tar.gz"
+      sha256 "699bcb4e39c32f834c4645339a2ae9756ce0e0976ce0750ecc7c07f7300b7d95"
 
       define_method(:install) do
         bin.install "fort"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tobsai/fort/releases/download/v0.5.0/fort_0.5.0_darwin_arm64.tar.gz"
-      sha256 "17851d65b0070dbbaf92911e03ff37ac4d5c32ce6603a4d4ea5a8e5869a0853f"
+      url "https://github.com/tobsai/fort/releases/download/v0.5.1/fort_0.5.1_darwin_arm64.tar.gz"
+      sha256 "763e2e4f294f16460d3918afb32fa75077ceddba78f30d2136cd96447b954701"
 
       define_method(:install) do
         bin.install "fort"
@@ -29,15 +29,15 @@ class Fort < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tobsai/fort/releases/download/v0.5.0/fort_0.5.0_linux_amd64.tar.gz"
-      sha256 "10890416e9ff9dff7c76293c2f7db557925b36ee4a281f6921990dc814d8bf3f"
+      url "https://github.com/tobsai/fort/releases/download/v0.5.1/fort_0.5.1_linux_amd64.tar.gz"
+      sha256 "573b25c5c05374e5506d7ffd844c4dd7cb04df63435b47a7422ed1e49e0ff3fb"
       define_method(:install) do
         bin.install "fort"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tobsai/fort/releases/download/v0.5.0/fort_0.5.0_linux_arm64.tar.gz"
-      sha256 "98dc900dcc584ba0357760223dc758b90d0c92bb493c82cd154024f5b4dedfe7"
+      url "https://github.com/tobsai/fort/releases/download/v0.5.1/fort_0.5.1_linux_arm64.tar.gz"
+      sha256 "19f2e55518670db9936171cde439d0f0afe6d9f499eaee3cb120b1f893c9346a"
       define_method(:install) do
         bin.install "fort"
       end
